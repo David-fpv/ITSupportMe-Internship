@@ -127,7 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="curl_wrapper.cpp" />
     <ClCompile Include="ITSupportMe Internship.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="curl_wrapper.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
