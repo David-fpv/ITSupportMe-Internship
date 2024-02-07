@@ -1,13 +1,21 @@
 ﻿#include <iostream>
 #include "curl_wrapper.h"
 #include <string>
+#include <boost/json.hpp>
+#include "User.hpp"
+using namespace boost::json;
+using namespace boost_json_user_ns;
+
 
 int main(void)
 {
-    CurlWrapper test("https://jsonplaceholder.typicode.com/users");
-    std::cout << test.get_message() << "\n\n\n\n";
-    CurlWrapper test2("https://example.com");
-    std::cout << test2.get_message() << "\n";
-    std::cout << test2.get_result_code();
+    CurlWrapper client("https://jsonplaceholder.typicode.com/users");
+    std::vector<User> users = ParseUsers(client.get_message());
+
+    for (int i = 0; i < users.size(); i++)
+    {
+        std::cout << users[i].id << ". " << users[i].name << ";\n";
+    }
+
     return 0;
 }
