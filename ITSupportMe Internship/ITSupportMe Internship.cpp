@@ -2,7 +2,7 @@
 #include "curl_wrapper.h"
 #include <string>
 #include <boost/json.hpp>
-#include "User.hpp"
+#include "User.h"
 using namespace boost::json;
 using namespace boost_json_user_ns;
 
